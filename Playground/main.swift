@@ -11,9 +11,14 @@ import Foundation
 //print(balancedParentheses(str: readLine()!))
 
 let linkedList = LinkedList<Int>()
-linkedList.push(1)
-linkedList.push(2)
+
 linkedList.push(3)
-print(linkedList,linkedList.head,linkedList.tail?.next)
+linkedList.push(2)
+linkedList.push(1)
+linkedList.append(4)
+print(linkedList.node(at: 2))
+print(linkedList,linkedList.head?.value,linkedList.tail?.value)
+
+
 
 

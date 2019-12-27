@@ -27,6 +27,46 @@ public class LinkedList<Value> {
         }
     }
     
+    func append(_ value: Value) {
+        if tail == nil {
+            push(value)
+        }
+        
+        tail!.next = Node(value: value)
+        
+        tail = tail!.next
+    }
+    
+    /// Выводит Node по номеру
+    /// - Parameter index: порядок в списке
+    func node(at index: Int) -> Node<Value>? {
+        
+        var currectNode = head
+        
+        var currectIndex = 0
+        
+        while currectNode != nil && currectIndex < index {
+            currectNode = currectNode!.next
+            currectIndex += 1
+        }
+        
+        return currectNode
+    }
+    
+    
+    /// Вставка в список узла
+    /// - Parameter value: значение
+    /// - Parameter node: узел в который вставляем значение после 
+    func insert(_ value: Value, after node: Node<Value> ) -> Node<Value> {
+        
+        guard tail != nil else {
+            append(value)
+            return tail!
+        }
+        
+        node.next = Node(value: value, next: node.next)
+        return node.next!
+    }
 }
 
 extension LinkedList: CustomStringConvertible {
