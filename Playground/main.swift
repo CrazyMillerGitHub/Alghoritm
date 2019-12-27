@@ -8,5 +8,12 @@
 
 import Foundation
 
-print("Hello, World!")
+//print(balancedParentheses(str: readLine()!))
+
+let linkedList = LinkedList<Int>()
+linkedList.push(1)
+linkedList.push(2)
+linkedList.push(3)
+print(linkedList,linkedList.head,linkedList.tail?.next)
+
 
